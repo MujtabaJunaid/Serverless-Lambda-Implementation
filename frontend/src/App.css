@@ -1,0 +1,202 @@
+/* Reset & Base Fonts */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Dark Purple Gradient Background */
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #fff; /* White text for contrast */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center; /* Center everything horizontally */
+}
+
+/* 1. Header (Transparent/Darker Purple) */
+.app-bar {
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark */
+  color: #fff;
+  padding: 20px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the text */
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+
+.app-bar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  
+  /* Gradient Text with Standard Property Fix */
+  background: linear-gradient(to right, #fff, #a0a0ff); 
+  -webkit-background-clip: text;
+  background-clip: text; /* <--- FIXED: Added standard property */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback */
+}
+
+/* 2. Main Layout - Perfectly Centered */
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* 3. Canvas Section (Left) */
+.canvas-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canvas-section h2 {
+  font-size: 1.1rem;
+  color: #d1d1ff; /* Light purple-white */
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.canvas-container {
+  width: 280px;
+  height: 280px;
+  background-color: rgba(255, 255, 255, 0.1); /* Glass effect border */
+  padding: 15px;
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(160, 160, 255, 0.2); /* Purple glow */
+}
+
+.sketch-canvas {
+  cursor: crosshair;
+  background-color: white; /* Canvas must remain white for drawing */
+  border-radius: 8px;
+}
+
+/* Buttons */
+.controls {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.btn-clear {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  flex: 1;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-clear:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.btn-predict {
+  background: linear-gradient(45deg, #6a11cb, #2575fc); /* Purple-Blue Gradient */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  flex: 1;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
+}
+
+.btn-predict:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106, 17, 203, 0.6);
+}
+
+/* 4. Probability Chart (Right) */
+.chart-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  min-width: 300px;
+  padding-top: 10px;
+}
+
+.chart-row {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.digit-label {
+  width: 25px;
+  text-align: right;
+  margin-right: 15px;
+  font-weight: 600;
+  color: #a0a0a0; /* Gray for non-active */
+  font-size: 1rem;
+}
+
+.bar-track {
+  flex-grow: 1;
+  height: 100%;
+  border-left: 2px solid #555; /* Darker separator line */
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.bar-fill {
+  height: 12px;
+  background-color: #555; /* Inactive dark gray */
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 4px 4px 0;
+  min-width: 2px;
+}
+
+/* Winner Styles */
+.winner-text {
+  color: #fff; /* White for winner text */
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px #2575fc;
+}
+
+.winner-bar {
+  background: linear-gradient(90deg, #6a11cb, #2575fc); /* Glowing Gradient Bar */
+  box-shadow: 0 0 10px rgba(37, 117, 252, 0.5);
+  height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+}
