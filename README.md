@@ -1,3 +1,4 @@
+
 # Serverless MNIST Digit Recognizer 🤖☁️
 
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
@@ -158,3 +159,6 @@ This project was built by:
 * **Anas Soharwardy** - [GitHub Profile](https://github.com/AnasSoharwardy)
 * **Mujtaba Junaid** - [GitHub Profile](https://github.com/MujtabaJunai)
 * **Arman Faisal** - [GitHub Profile](https://github.com/k228708)
+=======
+# Serverless-Lambda-Implementation
+>>>>>>> 5bd29dd4a92bce63097dacde9fef9293f54db791
